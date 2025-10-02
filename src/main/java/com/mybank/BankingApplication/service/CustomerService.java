@@ -48,5 +48,8 @@ public void deleteCustomer(Long id){
     }
     customerRepository.deleteById(id);
 }
+public List<Customer> getByFirstName(String firstName){
+        return customerRepository.findByFirstName(firstName);
+}
 
 }

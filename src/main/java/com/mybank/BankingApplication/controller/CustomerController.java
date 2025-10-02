@@ -23,7 +23,7 @@ public class CustomerController {
     }
 
     // GET all customers
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Customer>> getAllCustomers() {
         return ResponseEntity.ok(customerService.getAllCustomers());
     }
@@ -68,4 +68,10 @@ public class CustomerController {
         return ResponseEntity.ok("Customer deleted successfully");
 
     }
+    @GetMapping("/by-firstName")
+    public List<Customer> getByFirstName(@RequestParam String firstName){
+        return customerService.getByFirstName(firstName);
+    }
+
+
 }

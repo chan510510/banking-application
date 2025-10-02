@@ -41,4 +41,9 @@ public class AccountController {
         accountService.deleteAccount(id);
         return ResponseEntity.ok("Account deleted successfully");
     }
+    @GetMapping("/salary-greaterThan")
+    public ResponseEntity<List<Account>> getAccountsBalanceGreaterThan(@RequestParam Long balance){
+        return ResponseEntity.ok(accountService.getAccountsBalanceGreaterThan(balance));
+    }
 }
+

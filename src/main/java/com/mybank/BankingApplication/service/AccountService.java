@@ -46,4 +46,10 @@ public class AccountService {
         }
         accountRepository.deleteById(id);
   }
+  public List<Account> getAccountsBalanceGreaterThan(Long balance){
+      return accountRepository.getBalanceGreaterThan(balance);
+
+  }
+
+
 }
